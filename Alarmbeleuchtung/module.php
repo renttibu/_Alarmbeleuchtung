@@ -164,6 +164,8 @@ class Alarmbeleuchtung extends IPSModule
             }
         }
 
+        $this->UnlockSemaphore('ToggleAlarmLight');
+
         //WebFront options
         IPS_SetHidden($this->GetIDForIdent('Active'), !$this->ReadPropertyBoolean('EnableActive'));
         IPS_SetHidden($this->GetIDForIdent('AlarmLight'), !$this->ReadPropertyBoolean('EnableAlarmLight'));
